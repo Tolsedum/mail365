@@ -1,0 +1,1038 @@
+{
+    "post_contactGroups": {
+        "description": "Создать новую контактную группу",
+        "method": "post",
+        "url": "contactGroups",
+        "patern": {
+            "Name": {
+                "optional": true,
+                "description": "Название группы контактов (от 3 до 25 символов)"
+            }
+        },
+        "return_value":{
+            "Id": {
+                "description": "Идентификатор группы контактов"
+            },
+            "Name": {
+                "description": "Название группы контактов"
+            },
+            "TotalContacts": {
+                "description": "Количество записей в группе"
+            },
+            "LastAddedContactDateTime": {
+                "description": "Дата и время добавления последнего контакта"
+            },
+            "LastSmsSendingDateTime": {
+                "description": "Дата и время последней СМС-рассылки по группе контактов"
+            },
+            "LastEmailSendingDateTime": {
+                "description": "Дата и время последней email-рассылки по группе контактов"
+            },
+            "TotalContactsWithPhoneNumber": {
+                "description": "Количество записей, содержащих номер телефона"
+            },
+            "TotalContactsWithEmail": {
+                "description": "Количество записей, содержащих email-адрес"
+            },
+            "Filters": {
+                "description": "Информация о фильтрах"
+            },
+            "Id": {
+                "description": "Идентификатор фильтра"
+            },
+            "Name": {
+                "description": "Название фильтра"
+            },
+            "Expressions": {
+                "description": "Условия фильтра"
+            },
+            "Field": {
+                "description": "Поле для фильтрации"
+            },
+            "Operator": {
+                "description": "Логический оператор"
+            },
+            "Value": {
+                "description": "Значение фильтра"
+            },
+            "Preset": {
+                "description": "True &#8212; если фильтр является предустановленным и не может быть изменён"
+            },
+            "Columns": {
+                "description": "Информация о колонках"
+            },
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "get_contactGroups": {
+        "description": "Получить информацию о группах контактов в порядке их создания",
+        "method": "get",
+        "url": "contactGroups",
+        "patern": {
+            "SearchQuery": {
+                "optional": false,
+                "description": "Поисковая фраза"
+            },
+            "Offset": {
+                "optional": false,
+                "description": "Количество начальных элементов в результате, которые надо пропустить"
+            },
+            "Limit": {
+                "optional": false,
+                "description": "Количество элементов, которые необходимо вернуть (максимум &#8212; 500, по умолчанию &#8212; 50)"
+            },
+            "IncludeStatistics": {
+                "optional": false,
+                "description": "True &#8212; если следует включать в ответ статистику по группе"
+            },
+            "IncludeFilters": {
+                "optional": false,
+                "description": "True &#8212; если следует включать в ответ фильтры группы"
+            },
+            "IncludeColumns": {
+                "optional": false,
+                "description": "True &#8212; если следует включать в результат колонки группы"
+            }
+        },
+        "return_value":{
+            "Items": {
+                "description": "Выбранное подмножество элементов"
+            },
+            "Id": {
+                "description": "Идентификатор группы контактов. Не изменяется при переименовании группы."
+            },
+            "Name": {
+                "description": "Название группы контактов"
+            },
+            "TotalContacts": {
+                "description": "Количество записей в группе"
+            },
+            "LastAddedContactDateTime": {
+                "description": "Дата и время добавления последнего контакта"
+            },
+            "LastSmsSendingDateTime": {
+                "description": "Дата и время последней СМС-рассылки по группе контактов"
+            },
+            "LastEmailSendingDateTime": {
+                "description": "Дата и время последней email-рассылки по группе контактов"
+            },
+            "TotalContactsWithPhoneNumber": {
+                "description": "Количество записей, содержащих номер телефона"
+            },
+            "TotalContactsWithEmail": {
+                "description": "Количество записей, содержащих email-адрес"
+            },
+            "Filters": {
+                "description": "Информация о фильтрах"
+            },
+            "Id": {
+                "description": "Идентификатор фильтра"
+            },
+            "Name": {
+                "description": "Название фильтра"
+            },
+            "Expressions": {
+                "description": "Условия фильтра"
+            },
+            "Field": {
+                "description": "Поле для фильтрации"
+            },
+            "Operator": {
+                "description": "Логический оператор"
+            },
+            "Value": {
+                "description": "Значение фильтра"
+            },
+            "Preset": {
+                "description": "True &#8212; если фильтр является предустановленным и не может быть изменён"
+            },
+            "Columns": {
+                "description": "Информация о колонках"
+            },
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            },
+            "Total": {
+                "description": "Общее количество элементов"
+            }
+        }
+    },
+    "put_contactGroups/{Id}": {
+        "description": "Переименовать контактную группу",
+        "method": "put",
+        "url": "contactGroups/{Id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Name": {
+                "optional": false,
+                "description": "Название группы контактов (от 3 до 25 символов)"
+            }
+        },
+        "return_value":{
+            "Id": {
+                "description": "Идентификатор группы контактов"
+            },
+            "Name": {
+                "description": "Название группы контактов"
+            },
+            "TotalContacts": {
+                "description": "Количество записей в группе"
+            },
+            "LastAddedContactDateTime": {
+                "description": "Дата и время добавления последнего контакта"
+            },
+            "LastSmsSendingDateTime": {
+                "description": "Дата и время последней СМС-рассылки по группе контактов"
+            },
+            "LastEmailSendingDateTime": {
+                "description": "Дата и время последней email-рассылки по группе контактов"
+            },
+            "TotalContactsWithPhoneNumber": {
+                "description": "Количество записей, содержащих номер телефона"
+            },
+            "TotalContactsWithEmail": {
+                "description": "Количество записей, содержащих email-адрес"
+            },
+            "Filters": {
+                "description": "Информация о фильтрах"
+            },
+            "Id": {
+                "description": "Идентификатор фильтра"
+            },
+            "Name": {
+                "description": "Название фильтра"
+            },
+            "Expressions": {
+                "description": "Условия фильтра"
+            },
+            "Field": {
+                "description": "Поле для фильтрации"
+            },
+            "Operator": {
+                "description": "Логический оператор"
+            },
+            "Value": {
+                "description": "Значение фильтра"
+            },
+            "Preset": {
+                "description": "True &#8212; если фильтр является предустановленным и не может быть изменён"
+            },
+            "Columns": {
+                "description": "Информация о колонках"
+            },
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "post_contactGroups/{Id}": {
+        "description": "Переименовать контактную группу",
+        "method": "post",
+        "url": "contactGroups/{Id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Name": {
+                "optional": false,
+                "description": "Название группы контактов (от 3 до 25 символов)"
+            }
+        },
+        "return_value":{
+            "Id": {
+                "description": "Идентификатор группы контактов"
+            },
+            "Name": {
+                "description": "Название группы контактов"
+            },
+            "TotalContacts": {
+                "description": "Количество записей в группе"
+            },
+            "LastAddedContactDateTime": {
+                "description": "Дата и время добавления последнего контакта"
+            },
+            "LastSmsSendingDateTime": {
+                "description": "Дата и время последней СМС-рассылки по группе контактов"
+            },
+            "LastEmailSendingDateTime": {
+                "description": "Дата и время последней email-рассылки по группе контактов"
+            },
+            "TotalContactsWithPhoneNumber": {
+                "description": "Количество записей, содержащих номер телефона"
+            },
+            "TotalContactsWithEmail": {
+                "description": "Количество записей, содержащих email-адрес"
+            },
+            "Filters": {
+                "description": "Информация о фильтрах"
+            },
+            "Id": {
+                "description": "Идентификатор фильтра"
+            },
+            "Name": {
+                "description": "Название фильтра"
+            },
+            "Expressions": {
+                "description": "Условия фильтра"
+            },
+            "Field": {
+                "description": "Поле для фильтрации"
+            },
+            "Operator": {
+                "description": "Логический оператор"
+            },
+            "Value": {
+                "description": "Значение фильтра"
+            },
+            "Preset": {
+                "description": "True &#8212; если фильтр является предустановленным и не может быть изменён"
+            },
+            "Columns": {
+                "description": "Информация о колонках"
+            },
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "delete_contactGroups/{id}": {
+        "description": "Удалить контактную группу",
+        "method": "delete",
+        "url": "contactGroups/{id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "get_contactGroups/{id}": {
+        "description": "Получить информацию о конкретной группе контактов",
+        "method": "get",
+        "url": "contactGroups/{id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "IncludeStatistics": {
+                "optional": false,
+                "description": "True &#8212; если следует включать в ответ статистику по группе"
+            },
+            "IncludeFilters": {
+                "optional": false,
+                "description": "True &#8212; если следует включать в ответ фильтры группы"
+            },
+            "IncludeColumns": {
+                "optional": false,
+                "description": "True &#8212; если следует включать в результат колонки группы"
+            }
+        },
+        "return_value":{
+            "Id": {
+                "description": "Идентификатор группы контактов"
+            },
+            "Name": {
+                "description": "Название группы контактов"
+            },
+            "TotalContacts": {
+                "description": "Количество записей в группе"
+            },
+            "LastAddedContactDateTime": {
+                "description": "Дата и время добавления последнего контакта"
+            },
+            "LastSmsSendingDateTime": {
+                "description": "Дата и время последней СМС-рассылки по группе контактов"
+            },
+            "LastEmailSendingDateTime": {
+                "description": "Дата и время последней email-рассылки по группе контактов"
+            },
+            "TotalContactsWithPhoneNumber": {
+                "description": "Количество записей, содержащих номер телефона"
+            },
+            "TotalContactsWithEmail": {
+                "description": "Количество записей, содержащих email-адрес"
+            },
+            "Filters": {
+                "description": "Информация о фильтрах"
+            },
+            "Id": {
+                "description": "Идентификатор фильтра"
+            },
+            "Name": {
+                "description": "Название фильтра"
+            },
+            "Expressions": {
+                "description": "Условия фильтра"
+            },
+            "Field": {
+                "description": "Поле для фильтрации"
+            },
+            "Operator": {
+                "description": "Логический оператор"
+            },
+            "Value": {
+                "description": "Значение фильтра"
+            },
+            "Preset": {
+                "description": "True &#8212; если фильтр является предустановленным и не может быть изменён"
+            },
+            "Columns": {
+                "description": "Информация о колонках"
+            },
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "post_contactGroups/{id}/delete": {
+        "description": "Удалить контактную группу",
+        "method": "post",
+        "url": "contactGroups/{id}/delete",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "get_contactGroups/{groupId}/typos": {
+        "description": "Получить информацию об опечатках в конкретной контактной группе",
+        "method": "get",
+        "url": "contactGroups/{groupId}/typos",
+        "patern": {
+            "GroupId": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "SearchQuery": {
+                "optional": false,
+                "description": "Поисковая фраза"
+            },
+            "OrderBy": {
+                "optional": false,
+                "description": "Порядок сортировки"
+            },
+            "OrderDestination": {
+                "optional": false,
+                "description": "Направление сортировки"
+            },
+            "Offset": {
+                "optional": false,
+                "description": "Количество начальных элементов в результате, которые надо пропустить"
+            },
+            "Limit": {
+                "optional": false,
+                "description": "Количество элементов, которые необходимо вернуть (максимум &#8212; 500, по умолчанию &#8212; 50)"
+            }
+        },
+        "return_value":{
+            "Items": {
+                "description": "Выбранное подмножество элементов"
+            },
+            "ContactId": {
+                "description": "Идентификатор контакта"
+            },
+            "SourceFirstName": {
+                "description": "Исходное имя"
+            },
+            "SourceLastName": {
+                "description": "Исходная фамилия"
+            },
+            "SourceMiddleName": {
+                "description": "Исходное отчество"
+            },
+            "SourceSex": {
+                "description": "Исходный пол, true &#8212; мужской пол, false &#8212; женский"
+            },
+            "CleanedFirstName": {
+                "description": "Исправленное имя"
+            },
+            "CleanedLastName": {
+                "description": "Исправленная фамилия"
+            },
+            "CleanedMiddleName": {
+                "description": "Исправленное отчество"
+            },
+            "CleanedSex": {
+                "description": "Исправленный пол, true &#8212; мужской пол, false &#8212; женский"
+            },
+            "Total": {
+                "description": "Общее количество элементов"
+            }
+        }
+    },
+    "get_contactGroups/{groupId}/typos/{id}": {
+        "description": "Получить информацию о конкретной опечатке в конкретной контактной группе",
+        "method": "get",
+        "url": "contactGroups/{groupId}/typos/{id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор контакта. Идентификатор контакта с опечаткой можно получить с помощью метода <a href='#descriptionGetContactGroupsGroupIdTypos'>GET: /contactGroups/{groupId}/typos</a>"
+            },
+            "GroupId": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            }
+        },
+        "return_value":{
+            "ContactId": {
+                "description": "Идентификатор контакта"
+            },
+            "SourceFirstName": {
+                "description": "Исходное имя"
+            },
+            "SourceLastName": {
+                "description": "Исходная фамилия"
+            },
+            "SourceMiddleName": {
+                "description": "Исходное отчество"
+            },
+            "SourceSex": {
+                "description": "Исходный пол, true &#8212; мужской пол, false &#8212; женский"
+            },
+            "CleanedFirstName": {
+                "description": "Исправленное имя"
+            },
+            "CleanedLastName": {
+                "description": "Исправленная фамилия"
+            },
+            "CleanedMiddleName": {
+                "description": "Исправленное отчество"
+            },
+            "CleanedSex": {
+                "description": "Исправленный пол, true &#8212; мужской пол, false &#8212; женский"
+            }
+        }
+    },
+    "post_contactGroups/{groupId}/typos/{id}/approve": {
+        "description": "Подтвердить исправления опечатки, предложенные Арамбой",
+        "method": "post",
+        "url": "contactGroups/{groupId}/typos/{id}/approve",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор контакта. Идентификатор контакта с опечаткой можно получить с помощью метода <a href='#descriptionGetContactGroupsGroupIdTypos'>GET: /contactGroups/{groupId}/typos</a>"
+            },
+            "GroupId": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_contactGroups/{groupId}/typos/{id}/custom": {
+        "description": "Исправить опечатки самостоятельно, игнорируя предложенные Арамбой исправления",
+        "method": "post",
+        "url": "contactGroups/{groupId}/typos/{id}/custom",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор контакта. Идентификатор контакта с опечаткой можно получить с помощью метода <a href='#descriptionGetContactGroupsGroupIdTypos'>GET: /contactGroups/{groupId}/typos</a>"
+            },
+            "GroupId": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "CleanedFirstName": {
+                "optional": false,
+                "description": "Исправленное имя"
+            },
+            "CleanedLastName": {
+                "optional": false,
+                "description": "Исправленная фамилия"
+            },
+            "CleanedMiddleName": {
+                "optional": false,
+                "description": "Исправленное отчество"
+            },
+            "CleanedSex": {
+                "optional": false,
+                "description": "Исправленный пол, true &#8212; мужской пол, false &#8212; женский"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_contactGroups/{id}/columns": {
+        "description": "Создать новую колонку в группе контактов",
+        "method": "post",
+        "url": "contactGroups/{id}/columns",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Type": {
+                "optional": false,
+                "description": "Тип колонки"
+            },
+            "Title": {
+                "optional": false,
+                "description": "Название колонки"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля"
+            }
+        },
+        "return_value":{
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "get_contactGroups/{id}/columns": {
+        "description": "Получить информацию обо всех колонках группы контактов в порядке их индекса",
+        "method": "get",
+        "url": "contactGroups/{id}/columns",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            }
+        },
+        "return_value":{
+            "Items": {
+                "description": "Выбранное подмножество элементов"
+            },
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            },
+            "Total": {
+                "description": "Общее количество элементов"
+            }
+        }
+    },
+    "delete_contactGroups/{id}/columns/{index}": {
+        "description": "Удалить колонку из группы контактов",
+        "method": "delete",
+        "url": "contactGroups/{id}/columns/{index}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdColumns'>GET: /contactGroups/{id}/columns</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_contactGroups/{id}/columns/{index}": {
+        "description": "Редактировать колонку группы контактов",
+        "method": "post",
+        "url": "contactGroups/{id}/columns/{index}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdColumns'>GET: /contactGroups/{id}/columns</a>"
+            },
+            "Title": {
+                "optional": false,
+                "description": "Название колонки"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля"
+            }
+        },
+        "return_value":{
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "put_contactGroups/{id}/columns/{index}": {
+        "description": "Редактировать колонку группы контактов",
+        "method": "put",
+        "url": "contactGroups/{id}/columns/{index}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdColumns'>GET: /contactGroups/{id}/columns</a>"
+            },
+            "Title": {
+                "optional": false,
+                "description": "Название колонки"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля"
+            }
+        },
+        "return_value":{
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "get_contactGroups/{id}/columns/{index}": {
+        "description": "Получить информацию о конкретной колонке группы контактов",
+        "method": "get",
+        "url": "contactGroups/{id}/columns/{index}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdColumns'>GET: /contactGroups/{id}/columns</a>"
+            }
+        },
+        "return_value":{
+            "Title": {
+                "description": "Название колонки"
+            },
+            "Type": {
+                "description": "Тип колонки"
+            },
+            "State": {
+                "description": "Текущее состояние колонки"
+            },
+            "Index": {
+                "description": "Индекс колонки, с отсчётом от нуля"
+            },
+            "Preset": {
+                "description": "True &#8212; если колонка является предустановленной и не может быть переименована"
+            }
+        }
+    },
+    "post_contactGroups/{id}/columns/{index}/delete": {
+        "description": "Удалить колонку из группы контактов",
+        "method": "post",
+        "url": "contactGroups/{id}/columns/{index}/delete",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Index": {
+                "optional": false,
+                "description": "Индекс колонки, с отсчётом от нуля. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdColumns'>GET: /contactGroups/{id}/columns</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_contactGroups/{id}/contacts": {
+        "description": "Добавить в группу новый контакт",
+        "method": "post",
+        "url": "contactGroups/{id}/contacts",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "Data": {
+                "optional": false,
+                "description": "Данные контакта, передаются в виде словаря. Например: {&#34;Номер телефона&#34;: &#34;88005551745&#34;, &#34;Название&#34;: &#34;Арамба&#34;, &#34;Комментарий&#34;: &#34;Лучший сервис для СМС и email информирования&#34;}"
+            }
+        },
+        "return_value":{
+            "Data": {
+                "description": "Данные записи о контакте (имя, фамилия, номер телефона и прочее)"
+            },
+            "PhoneNumberInBlackList": {
+                "description": "True &#8212; если номер телефона занесён в чёрный список"
+            },
+            "EmailInBlackList": {
+                "description": "True &#8212; если email-адрес занесён в чёрный список"
+            },
+            "Id": {
+                "description": "Идентификатор контакта"
+            }
+        }
+    },
+    "get_contactGroups/{id}/contacts": {
+        "description": "Получить информацию о контактах контактной группы",
+        "method": "get",
+        "url": "contactGroups/{id}/contacts",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы контактов. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "SearchQuery": {
+                "optional": false,
+                "description": "Поисковая фраза"
+            },
+            "OrderBy": {
+                "optional": false,
+                "description": "Порядок сортировки"
+            },
+            "OrderDestination": {
+                "optional": false,
+                "description": "Направление сортировки"
+            },
+            "Offset": {
+                "optional": false,
+                "description": "Количество начальных элементов в результате, которые надо пропустить"
+            },
+            "Limit": {
+                "optional": false,
+                "description": "Количество элементов, которые необходимо вернуть(максимум &#8212; 500, по умолчанию &#8212; 50)"
+            }
+        },
+        "return_value":{
+            "Items": {
+                "description": "Выбранное подмножество элементов"
+            },
+            "Data": {
+                "description": "Данные записи о контакте (имя, фамилия, номер телефона и прочее)"
+            },
+            "PhoneNumberInBlackList": {
+                "description": "True &#8212; если номер телефона занесён в чёрный список"
+            },
+            "EmailInBlackList": {
+                "description": "True &#8212; если email-адрес занесён в чёрный список"
+            },
+            "Id": {
+                "description": "Идентификатор контакта"
+            },
+            "Total": {
+                "description": "Общее количество элементов"
+            }
+        }
+    },
+    "delete_contactGroups/{id}/contacts/{contactId}": {
+        "description": "Удалить контакт",
+        "method": "delete",
+        "url": "contactGroups/{id}/contacts/{contactId}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "ContactId": {
+                "optional": false,
+                "description": "Идентификатор контакта. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_contactGroups/{id}/contacts/{contactIdPhoneOrEmail}": {
+        "description": "Изменить данные контакта",
+        "method": "post",
+        "url": "contactGroups/{id}/contacts/{contactIdPhoneOrEmail}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор контактной группы. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "СontactIdPhoneOrEmail": {
+                "optional": false,
+                "description": "Идентификатор контакта, его номер телефона ил электронная почта. Идентификатор контакта можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            },
+            "Data": {
+                "optional": false,
+                "description": "Данные контакта, передаются в виде словаря. Например: {&#34;Номер телефона&#34;: &#34;88005551745&#34;, &#34;Название&#34;: &#34;Арамба&#34;, &#34;Комментарий&#34;: &#34;Лучший сервис для СМС и email информирования&#34;}"
+            }
+        },
+        "return_value":{
+            "Data": {
+                "description": "Данные записи о контакте (имя, фамилия, номер телефона и прочее)"
+            },
+            "PhoneNumberInBlackList": {
+                "description": "True &#8212; если номер телефона занесён в чёрный список"
+            },
+            "EmailInBlackList": {
+                "description": "True &#8212; если email-адрес занесён в чёрный список"
+            },
+            "Id": {
+                "description": "Идентификатор контакта"
+            }
+        }
+    },
+    "post_contactGroups/{id}/contacts/{contactId}/delete": {
+        "description": "Удалить контакт",
+        "method": "post",
+        "url": "contactGroups/{id}/contacts/{contactId}/delete",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "ContactId": {
+                "optional": false,
+                "description": "Идентификатор контакта. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_contactGroups/{id}/contacts/{contactIdPhoneOrEmail}/move/{targetGroupId}": {
+        "description": "Перенести контакт",
+        "method": "post",
+        "url": "contactGroups/{id}/contacts/{contactIdPhoneOrEmail}/move/{targetGroupId}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы, из которой будет перемещаться контакт. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "ContactIdPhoneOrEmail": {
+                "optional": false,
+                "description": "Номер телефона, эл. почта или идентификатор перемещаемого контакта. Идентификатор контакта можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            },
+            "TargetGroupId": {
+                "optional": false,
+                "description": "Идентификатор группы, в которую будет перемещаться контакт. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_contactGroups/{id}/contacts/{contactIdPhoneOrEmail}/copy/{targetGroupId}": {
+        "description": "Скопировать контакт",
+        "method": "post",
+        "url": "contactGroups/{id}/contacts/{contactIdPhoneOrEmail}/copy/{targetGroupId}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор группы, из которой будет копироваться контакт. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            },
+            "ContactIdPhoneOrEmail": {
+                "optional": false,
+                "description": "Номер телефона, эл. почта или идентификатор копируемого контакта. Идентификатор контакта можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            },
+            "TargetGroupId": {
+                "optional": false,
+                "description": "Идентификатор группы, в которую будет копироваться контакт. Его можно получить с помощью метода <a href='#descriptionGetContactGroups'>GET: /contactGroups</a>"
+            }
+        },
+        "return_value":{
+        }
+    }    
+}

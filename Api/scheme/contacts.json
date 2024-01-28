@@ -1,0 +1,85 @@
+{
+    "post_contacts/{id}": {
+        "description": "Изменить данные контакта",
+        "method": "post",
+        "url": "contacts/{id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор контакта Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            },
+            "Data": {
+                "optional": false,
+                "description": "Данные контакта, передаются в виде словаря. Например:  {&#34;Номер телефона&#34;: &#34;88005551745&#34;, &#34;Название&#34;: &#34;Арамба&#34;, &#34;Комментарий&#34;: &#34;Лучший сервис для СМС и email информирования&#34;}"
+            }
+        },
+        "return_value":{
+            "Data": {
+                "description": "Данные записи о контакте (имя, фамилия, номер телефона и прочее)"
+            },
+            "PhoneNumberInBlackList": {
+                "description": "True &#8212; если номер телефона занесён в чёрный список"
+            },
+            "EmailInBlackList": {
+                "description": "True &#8212; если email-адрес занесён в чёрный список"
+            },
+            "Id": {
+                "description": "Идентификатор контакта"
+            }
+        }
+    },
+    "put_contacts/{id}": {
+        "description": "Изменить данные контакта",
+        "method": "put",
+        "url": "contacts/{id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор контакта. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            },
+            "Data": {
+                "optional": false,
+                "description": "Данные контакта, передаются в виде словаря. Например: {&#34;Номер телефона&#34;: &#34;88005551745&#34;, &#34;Название&#34;: &#34;Арамба&#34;, &#34;Комментарий&#34;: &#34;Лучший сервис для СМС и email информирования&#34;}"
+            }
+        },
+        "return_value":{
+            "Data": {
+                "description": "Данные записи о контакте (имя, фамилия, номер телефона и прочее)"
+            },
+            "PhoneNumberInBlackList": {
+                "description": "True &#8212; если номер телефона занесён в чёрный список"
+            },
+            "EmailInBlackList": {
+                "description": "True &#8212; если email-адрес занесён в чёрный список"
+            },
+            "Id": {
+                "description": "Идентификатор контакта"
+            }
+        }
+    },
+    "get_contacts/{id}": {
+        "description": "Получить информацию о конкретном контакте",
+        "method": "get",
+        "url": "contacts/{id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор контакта. Его можно получить с помощью метода <a href='#descriptionGetContactGroupsIdContacts'>GET: /contactGroups/{id}/contacts</a>"
+            }
+        },
+        "return_value":{
+            "Data": {
+                "description": "Данные записи о контакте (имя, фамилия, номер телефона и прочее)"
+            },
+            "PhoneNumberInBlackList": {
+                "description": "True &#8212; если номер телефона занесён в чёрный список"
+            },
+            "EmailInBlackList": {
+                "description": "True &#8212; если email-адрес занесён в чёрный список"
+            },
+            "Id": {
+                "description": "Идентификатор контакта"
+            }
+        }
+    }    
+}

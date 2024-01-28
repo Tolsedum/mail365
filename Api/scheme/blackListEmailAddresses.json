@@ -1,0 +1,187 @@
+{
+    "get_blackListEmailAddresses": {
+        "description": "Получить информацию об email-адресах в чёрном списке, начиная с недавно добавленных",
+        "method": "get",
+        "url": "blackListEmailAddresses",
+        "patern": {
+            "StartUtcDateTime": {
+                "optional": false,
+                "description": "Фильтр по дате добавления, нижняя граница (UTC)"
+            },
+            "EndUtcDateTime": {
+                "optional": false,
+                "description": "Фильтр по дате добавления, верхняя граница (UTC)"
+            },
+            "SearchString": {
+                "optional": false,
+                "description": "Строка поиска по email-адресам"
+            },
+            "Offset": {
+                "optional": false,
+                "description": "Количество начальных элементов в результате, которые надо пропустить"
+            },
+            "Limit": {
+                "optional": false,
+                "description": "Количество элементов, которые необходимо вернуть (максимум &#8212; 500, по умолчанию &#8212; 50)"
+            }
+        },
+        "return_value":{
+            "Items": {
+                "description": "Выбранное подмножество элементов"
+            },
+            "Email": {
+                "description": "Email-адрес, занесённый в чёрный список"
+            },
+            "UtcDateAdded": {
+                "description": "Дата занесения email-адреса в чёрный список (UTC)"
+            },
+            "Comments": {
+                "description": "Комментарий к записи в чёрном списке"
+            },
+            "Reason": {
+                "description": "Причина по который email-адрес был занесён в чёрный список, принимает значения: CustomerAdded, UnsubscribedByEmailLink"
+            },
+            "Total": {
+                "description": "Общее количество элементов"
+            }
+        }
+    },
+    "post_blackListEmailAddresses": {
+        "description": "Добавить email-адрес в чёрный список",
+        "method": "post",
+        "url": "blackListEmailAddresses",
+        "patern": {
+            "Email": {
+                "optional": false,
+                "description": "Email-адрес, подлежащий занесению в чёрный список"
+            },
+            "Comments": {
+                "optional": false,
+                "description": "Комментарий к записи в чёрном списке (максимум — 100 символов)"
+            }
+        },
+        "return_value":{
+            "Email": {
+                "description": "Email-адрес, занесённый в чёрный список"
+            },
+            "UtcDateAdded": {
+                "description": "Дата занесения email-адреса в чёрный список (UTC)"
+            },
+            "Comments": {
+                "description": "Комментарий к записи в чёрном списке"
+            },
+            "Reason": {
+                "description": "Причина по который email-адрес был занесён в чёрный список, принимает значения: CustomerAdded, UnsubscribedByEmailLink"
+            }
+        }
+    },
+    "get_blackListEmailAddresses/{email}": {
+        "description": "Получить информацию о конкретном email-адресе из чёрного списка",
+        "method": "get",
+        "url": "blackListEmailAddresses/{email}",
+        "patern": {
+            "Email": {
+                "optional": false,
+                "description": "Email-адрес, по которому нужно получить информацию"
+            }
+        },
+        "return_value":{
+            "Email": {
+                "description": "Email-адрес, занесённый в чёрный список"
+            },
+            "UtcDateAdded": {
+                "description": "Дата занесения email-адреса в чёрный список (UTC)"
+            },
+            "Comments": {
+                "description": "Комментарий к записи в чёрном списке"
+            },
+            "Reason": {
+                "description": "Причина по который email-адрес был занесён в чёрный список, принимает значения: CustomerAdded, UnsubscribedByEmailLink"
+            }
+        }
+    },
+    "post_blackListEmailAddresses/{email}": {
+        "description": "Изменить запись об email-адресе в чёрном списке",
+        "method": "post",
+        "url": "blackListEmailAddresses/{email}",
+        "patern": {
+            "Email": {
+                "optional": false,
+                "description": "Email-адрес, сведения о котором нужно изменить"
+            },
+            "Comments": {
+                "optional": false,
+                "description": "Комментарий к записи в чёрном списке (максимум — 100 символов)"
+            }
+        },
+        "return_value":{
+            "Email": {
+                "description": "Email-адрес, занесённый в чёрный список"
+            },
+            "UtcDateAdded": {
+                "description": "Дата занесения email-адреса в чёрный список (UTC)"
+            },
+            "Comments": {
+                "description": "Комментарий к записи в чёрном списке"
+            },
+            "Reason": {
+                "description": "Причина по который email-адрес был занесён в чёрный список, принимает значения: CustomerAdded, UnsubscribedByEmailLink"
+            }
+        }
+    },
+    "put_blackListEmailAddresses/{email}": {
+        "description": "Изменить запись об email-адресе в чёрном списке",
+        "method": "put",
+        "url": "blackListEmailAddresses/{email}",
+        "patern": {
+            "Email": {
+                "optional": false,
+                "description": "Email-адрес, сведения о котором нужно изменить"
+            },
+            "Comments": {
+                "optional": false,
+                "description": "Комментарий к записи в чёрном списке (максимум — 100 символов)"
+            }
+        },
+        "return_value":{
+            "Email": {
+                "description": "Email-адрес, занесённый в чёрный список"
+            },
+            "UtcDateAdded": {
+                "description": "Дата занесения email-адреса в чёрный список (UTC)"
+            },
+            "Comments": {
+                "description": "Комментарий к записи в чёрном списке"
+            },
+            "Reason": {
+                "description": "Причина по который email-адрес был занесён в чёрный список, принимает значения: CustomerAdded, UnsubscribedByEmailLink"
+            }
+        }
+    },
+    "delete_blackListEmailAddresses/{email}": {
+        "description": "Исключить email-адрес из чёрного списка",
+        "method": "delete",
+        "url": "blackListEmailAddresses/{email}",
+        "patern": {
+            "Email": {
+                "optional": false,
+                "description": "Email-адрес, подлежащий исключению из чёрного списка"
+            }
+        },
+        "return_value":{
+        }
+    },
+    "post_blackListEmailAddresses/{email}/delete": {
+        "description": "Исключить email-адрес из чёрного списка",
+        "method": "post",
+        "url": "blackListEmailAddresses/{email}/delete",
+        "patern": {
+            "Email": {
+                "optional": false,
+                "description": "Email-адрес, подлежащий исключению из чёрного списка"
+            }
+        },
+        "return_value":{
+        }
+    }    
+}

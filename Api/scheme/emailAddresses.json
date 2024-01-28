@@ -1,0 +1,49 @@
+{
+    "get_emailAddresses": {
+        "description": "Получить email-адреса отправителя в алфавитном порядке",
+        "method": "get",
+        "url": "emailAddresses",
+        "patern": {
+            "Offset": {
+                "optional": false,
+                "description": "Количество начальных элементов в результате, которые надо пропустить"
+            },
+            "Limit": {
+                "optional": false,
+                "description": "Количество элементов, которые необходимо вернуть (максимум &#8212; 500, по умолчанию &#8212; 50)"
+            }
+        },
+        "return_value":{
+            "Items": {
+                "description": "Выбранное подмножество элементов"
+            },
+            "Email": {
+                "description": "Адрес"
+            },
+            "Name": {
+                "description": "Имя"
+            },
+            "Total": {
+                "description": "Общее количество элементов"
+            }
+        }
+    },
+    "post_emailAddresses": {
+        "description": "Добавить email-адрес отправителя",
+        "method": "post",
+        "url": "emailAddresses",
+        "patern": {
+            "EmailAddress": {
+                "optional": false,
+                "description": "Email-адрес отправителя"
+            },
+            "EmailSenderName": {
+                "optional": false,
+                "description": "Имя отправителя"
+            }
+        },
+        "return_value":{
+            "description": "Добавленный email-адрес отправителя"
+        }
+    }    
+}

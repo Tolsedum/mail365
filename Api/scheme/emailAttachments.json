@@ -1,0 +1,34 @@
+{
+    "post_emailAttachments": {
+        "description": "Создать набор файлов-вложений и добавить в него произвольный файл",
+        "method": "post",
+        "url": "emailAttachments",
+        "patern": {
+            "": {
+                "optional": false,
+                "description": "Файл, который будет использоваться в качестве вложения в письме"
+            }
+        },
+        "return_value":{
+            "description": "Идентификатор нового набора файлов-вложений"
+        }
+    },
+    "post_emailAttachments/{id}": {
+        "description": "Добавить файл в уже существующий набор файлов-вложений",
+        "method": "post",
+        "url": "emailAttachments/{id}",
+        "patern": {
+            "Id": {
+                "optional": false,
+                "description": "Идентификатор существующего набора файлов-вложений"
+            },
+            "": {
+                "optional": false,
+                "description": "Файл, который будет использоваться в качестве вложения в письме"
+            }
+        },
+        "return_value":{
+            "description": "Идентификатор набора файлов-вложений, в который добавлен файл"
+        }
+    }    
+}
